@@ -1,4 +1,4 @@
-package org.pakhomov.didemo.services;
+package org.pakhomov.services;
 
 /**
  * Created by fossil on 16.06.18.

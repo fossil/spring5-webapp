@@ -2,8 +2,8 @@ package org.pakhomov.didemo.controllers;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.pakhomov.didemo.services.GreetingService;
-import org.pakhomov.didemo.services.GreetingServiceImpl;
+import org.pakhomov.services.GreetingService;
+import org.pakhomov.services.GreetingServiceImpl;
 
 import static org.junit.Assert.assertEquals;
 

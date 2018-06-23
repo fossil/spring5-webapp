@@ -1,4 +1,4 @@
-package org.pakhomov.didemo.services;
+package org.pakhomov.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

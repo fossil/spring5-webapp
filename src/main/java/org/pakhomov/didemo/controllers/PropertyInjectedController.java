@@ -1,6 +1,6 @@
 package org.pakhomov.didemo.controllers;
 
-import org.pakhomov.didemo.services.GreetingService;
+import org.pakhomov.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
