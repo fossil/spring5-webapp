@@ -104,24 +104,23 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         + "Read more: https://www.simplyrecipes.com/recipes/perfect_guacamole/#recipe");
 
         Notes guacNotes = new Notes();
-        guacNotes.setRecipe(guacRecipe);
         guacNotes.setRecipeNotes("For a very quick guacamole just take a 1/4 cup of salsa and mix it in with your mashed avocados.\n"
                 + "Feel free to experiment! One classic Mexican guacamole has pomegranate seeds and chunks of peaches in it (a Diana Kennedy favorite). Try guacamole with added pineapple, mango, or strawberries (see our Strawberry Guacamole).\n"
                 + "The simplest version of guacamole is just mashed avocados with salt. Don't let the lack of availability of other ingredients stop you from making guacamole.\n"
                 + "To extend a limited supply of avocados, add either sour cream or cottage cheese to your guacamole dip. Purists may be horrified, but so what? It tastes great.\n");
         guacRecipe.setNotes(guacNotes);
 
-        guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), each, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal(".5"), teaspoon, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("fresh lime juice of lemon juice", new BigDecimal(2), tablespoon, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(2), tablespoon, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), each, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("cilantro (leaves and tender stems), finely chopped", new BigDecimal(2), tablespoon, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("freshly grated black pepper", new BigDecimal(1), dash, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"), each, guacRecipe));
+        guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), each));
+        guacRecipe.addIngredient(new Ingredient("Kosher salt", new BigDecimal(".5"), teaspoon));
+        guacRecipe.addIngredient(new Ingredient("fresh lime juice of lemon juice", new BigDecimal(2), tablespoon));
+        guacRecipe.addIngredient(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(2), tablespoon));
+        guacRecipe.addIngredient(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), each));
+        guacRecipe.addIngredient(new Ingredient("cilantro (leaves and tender stems), finely chopped", new BigDecimal(2), tablespoon));
+        guacRecipe.addIngredient(new Ingredient("freshly grated black pepper", new BigDecimal(1), dash));
+        guacRecipe.addIngredient(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"), each));
 
-        guacRecipe.getCategories().add(american);
-        guacRecipe.getCategories().add(mexican);
+        guacRecipe.addCategory(american);
+        guacRecipe.addCategory(mexican);
 
         recipes.add(guacRecipe);
 
@@ -141,7 +140,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "Read more: https://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/");
 
         Notes tacoNotes = new Notes();
-        tacoNotes.setRecipe(tacosRecipe);
         tacoNotes.setRecipeNotes("We have a family motto and it is this: Everything goes better in a tortilla.\n" +
                 "Any and every kind of leftover can go inside a warm tortilla, usually with a healthy dose of pickled jalapenos. I can always sniff out a late-night snacker when the aroma of tortillas heating in a hot pan on the stove comes wafting through the house.\n" +
                 "Today’s tacos are more purposeful – a deliberate meal instead of a secretive midnight snack!\n" +
@@ -150,29 +148,29 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "Read more: https://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/");
         tacosRecipe.setNotes(tacoNotes);
 
-        tacosRecipe.getIngredients().add(new Ingredient("ancho chili powder", new BigDecimal(2), tablespoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("dried oregano", new BigDecimal(1), teaspoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("dried cumin", new BigDecimal(1), teaspoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("sugar", new BigDecimal(1), teaspoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("salt", new BigDecimal(".5"), teaspoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("clove garlic, finely chopped", new BigDecimal(1), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("finely grated orange zest", new BigDecimal(1), teaspoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("fresh-squeezed orange juice", new BigDecimal(3), tablespoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("olive oil", new BigDecimal(2), tablespoon, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("skinless, boneless chicken thighs (1 1/4 pounds)", new BigDecimal(6), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("small corn tortillas", new BigDecimal(8), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("packed baby arugula (3 ounces)", new BigDecimal(3), cup, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("medium ripe avocados, sliced", new BigDecimal(3), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("radishes, thinly sliced", new BigDecimal(4), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("cherry tomatoes, halved", new BigDecimal("0.5"), pint, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("red onion, thinly sliced", new BigDecimal(".25"), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("Roughly chopped cilantro", new BigDecimal(1), each, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("sour cream thinned", new BigDecimal(".5"), cup, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("milk", new BigDecimal(".25"), cup, tacosRecipe));
-        tacosRecipe.getIngredients().add(new Ingredient("lime, cut into wedges", new BigDecimal(1), each, tacosRecipe));
+        tacosRecipe.addIngredient(new Ingredient("ancho chili powder", new BigDecimal(2), tablespoon));
+        tacosRecipe.addIngredient(new Ingredient("dried oregano", new BigDecimal(1), teaspoon));
+        tacosRecipe.addIngredient(new Ingredient("dried cumin", new BigDecimal(1), teaspoon));
+        tacosRecipe.addIngredient(new Ingredient("sugar", new BigDecimal(1), teaspoon));
+        tacosRecipe.addIngredient(new Ingredient("salt", new BigDecimal(".5"), teaspoon));
+        tacosRecipe.addIngredient(new Ingredient("clove garlic, finely chopped", new BigDecimal(1), each));
+        tacosRecipe.addIngredient(new Ingredient("finely grated orange zest", new BigDecimal(1), teaspoon));
+        tacosRecipe.addIngredient(new Ingredient("fresh-squeezed orange juice", new BigDecimal(3), tablespoon));
+        tacosRecipe.addIngredient(new Ingredient("olive oil", new BigDecimal(2), tablespoon));
+        tacosRecipe.addIngredient(new Ingredient("skinless, boneless chicken thighs (1 1/4 pounds)", new BigDecimal(6), each));
+        tacosRecipe.addIngredient(new Ingredient("small corn tortillas", new BigDecimal(8), each));
+        tacosRecipe.addIngredient(new Ingredient("packed baby arugula (3 ounces)", new BigDecimal(3), cup));
+        tacosRecipe.addIngredient(new Ingredient("medium ripe avocados, sliced", new BigDecimal(3), each));
+        tacosRecipe.addIngredient(new Ingredient("radishes, thinly sliced", new BigDecimal(4), each));
+        tacosRecipe.addIngredient(new Ingredient("cherry tomatoes, halved", new BigDecimal("0.5"), pint));
+        tacosRecipe.addIngredient(new Ingredient("red onion, thinly sliced", new BigDecimal(".25"), each));
+        tacosRecipe.addIngredient(new Ingredient("Roughly chopped cilantro", new BigDecimal(1), each));
+        tacosRecipe.addIngredient(new Ingredient("sour cream thinned", new BigDecimal(".5"), cup));
+        tacosRecipe.addIngredient(new Ingredient("milk", new BigDecimal(".25"), cup));
+        tacosRecipe.addIngredient(new Ingredient("lime, cut into wedges", new BigDecimal(1), each));
 
-        tacosRecipe.getCategories().add(american);
-        tacosRecipe.getCategories().add(mexican);
+        tacosRecipe.addCategory(american);
+        tacosRecipe.addCategory(mexican);
 
         recipes.add(tacosRecipe);
 
