@@ -1,6 +1,5 @@
 package org.pakhomov.recipeapp.bootstrap;
 
-import com.sun.org.apache.regexp.internal.RE;
 import lombok.extern.slf4j.Slf4j;
 import org.pakhomov.recipeapp.domain.*;
 import org.pakhomov.recipeapp.repository.CategoryRepository;
@@ -9,6 +8,7 @@ import org.pakhomov.recipeapp.repository.UnitOfMeasureRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -33,6 +33,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         log.debug("Loading Bootstrap Data");
         recipeRepository.saveAll(getRecipes());
