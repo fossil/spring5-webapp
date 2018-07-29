@@ -1,5 +1,6 @@
 package org.pakhomov.recipeapp.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.pakhomov.recipeapp.domain.Category;
 import org.pakhomov.recipeapp.domain.UnitOfMeasure;
 import org.pakhomov.recipeapp.repository.CategoryRepository;
@@ -15,6 +16,7 @@ import java.util.Optional;
  * @author Victor Pakhomov
  * @since 14.07.18.
  */
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -26,6 +28,7 @@ public class IndexController {
 
     @RequestMapping({"", "/", "/index"})
     public String getIndex(Model model) {
+        log.debug("Getting Index Page");
         model.addAttribute("recipes", recipeService.getRecipes());
         return "index";
     }

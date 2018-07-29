@@ -1,6 +1,7 @@
 package org.pakhomov.recipeapp.bootstrap;
 
 import com.sun.org.apache.regexp.internal.RE;
+import lombok.extern.slf4j.Slf4j;
 import org.pakhomov.recipeapp.domain.*;
 import org.pakhomov.recipeapp.repository.CategoryRepository;
 import org.pakhomov.recipeapp.repository.RecipeRepository;
@@ -18,6 +19,7 @@ import java.util.Optional;
  * @author Victor Pakhomov
  * @since 29.07.18.
  */
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private final CategoryRepository categoryRepository;
@@ -32,10 +34,12 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+        log.debug("Loading Bootstrap Data");
         recipeRepository.saveAll(getRecipes());
     }
 
     private List<Recipe> getRecipes() {
+        log.debug("getRecipes");
         List<Recipe> recipes = new ArrayList<>(2);
 
         Optional<UnitOfMeasure> eachUOMOptional = unitOfMeasureRepository.findByDescription("Each");
